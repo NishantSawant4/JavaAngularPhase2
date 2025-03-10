@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.wipro.service.EmailClientService.java&apos; to &apos;EmailClient.java&apos;&#x0D;&#x0A;- Original project: &apos;user-service&apos;&#x0D;&#x0A;- Original element: &apos;com.wipro.service.EmailClientService.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.wipro.service.EmailClient.java&apos;" description="Rename compilation unit &apos;EmailClientService.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.wipro.service{EmailClientService.java" name="EmailClient.java" references="false" stamp="1741085468837" version="1.0"/>
+</session>

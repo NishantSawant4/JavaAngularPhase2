@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+
+  <div class="survey-container">
+    <h2>Customer Satisfaction Survey</h2>
+    <form class="survey-form">
+
+      <label>How did you hear about us?</label>
+      <input type="radio" name="source" value="social_media" id="social_media">
+      <label for="social_media">Social Media</label><br>
+      
+      <input type="radio" name="source" value="friend" id="friend">
+      <label for="friend">Friend</label><br>
+
+      <input type="radio" name="source" value="advertisement" id="advertisement">
+      <label for="advertisement">Advertisement</label><br>
+
+
+      <label>Which services do you use?</label>
+      <input type="checkbox" name="service" value="delivery" id="delivery">
+      <label for="delivery">Delivery</label><br>
+
+      <input type="checkbox" name="service" value="pickup" id="pickup">
+      <label for="pickup">Pickup</label><br>
+
+      <input type="checkbox" name="service" value="online_ordering" id="online_ordering">
+      <label for="online_ordering">Online Ordering</label><br>
+
+      <button type="submit">Submit Survey</button>
+
+    </form>
+  </div>
+
+</body>
+</html>

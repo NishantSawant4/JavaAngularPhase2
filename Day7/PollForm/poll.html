@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poll Form</title>
+  <link rel="stylesheet" href="poll.css">
+</head>
+<body>
+
+  <div class="poll-container">
+    <h2>Vote for Your Favorite Season</h2>
+    <form action="/poll" method="post" class="poll-form">
+
+      <label>
+        <input type="radio" name="season" value="spring" required>
+        Spring
+      </label><br>
+
+      <label>
+        <input type="radio" name="season" value="summer">
+        Summer
+      </label><br>
+
+      <label>
+        <input type="radio" name="season" value="autumn">
+        Autumn
+      </label><br>
+
+      <label>
+        <input type="radio" name="season" value="winter">
+        Winter
+      </label><br>
+
+      <button type="submit">Submit Vote</button>
+
+    </form>
+  </div>
+
+</body>
+</html>

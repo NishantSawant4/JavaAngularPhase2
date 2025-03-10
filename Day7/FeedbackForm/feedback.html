@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+  <div class="feedback-container">
+    <h2>Give Us Your Feedback</h2>
+    <form class="feedback-form">
+
+      <label>Rate our service:</label>
+      <div class="rating">
+        <input type="radio" name="rating" id="excellent" value="Excellent">
+        <label for="excellent">Excellent</label>
+
+        <input type="radio" name="rating" id="good" value="Good">
+        <label for="good">Good</label>
+
+        <input type="radio" name="rating" id="average" value="Average">
+        <label for="average">Average</label>
+
+        <input type="radio" name="rating" id="poor" value="Poor">
+        <label for="poor">Poor</label>
+      </div>
+
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" placeholder="Share your thoughts..." rows="5"></textarea>
+
+      <button type="submit">Submit Feedback</button>
+
+    </form>
+  </div>
+
+</body>
+</html>

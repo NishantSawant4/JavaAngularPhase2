@@ -1,0 +1,15 @@
+$primary: #ff5733; 
+$secondary: #00b894; 
+$font-family-base: 'Poppins', sans-serif;
+@import "../node_modules/bootstrap/scss/bootstrap";
+body {
+  background-color: #f8f9fa;
+}
+.custom-btn {
+  padding: 10px 20px;
+  background-color: $primary;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}

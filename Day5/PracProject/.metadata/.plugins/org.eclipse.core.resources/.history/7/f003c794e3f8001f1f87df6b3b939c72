@@ -1,0 +1,22 @@
+server:
+  port: 8060
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/users/**
+        - id: email-service
+          uri: lb://email-service
+          predicates:
+            - Path=/email/**
+eureka:
+ client:
+  register-with-eureka: false
+  fetch-registry: true
+  service-url:
+   defaultZone: http://localhost:8761/eureka	

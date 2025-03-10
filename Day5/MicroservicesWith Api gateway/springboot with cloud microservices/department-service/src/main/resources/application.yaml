@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: department-service
+
+  cloud:
+    circuitbreaker:
+      resilience4j:
+        instances:
+          userService:
+            slidingWindowSize: 5
+            failureRateThreshold: 50
+            waitDurationInOpenState: 10000ms
+            permittedNumberOfCallsInHalfOpenState: 2
+            minimumNumberOfCalls: 1
+
+  config:
+    import: "optional:configserver:http://localhost:8088"

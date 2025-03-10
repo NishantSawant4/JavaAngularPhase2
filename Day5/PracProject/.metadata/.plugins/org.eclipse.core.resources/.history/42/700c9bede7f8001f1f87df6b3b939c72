@@ -1,0 +1,5 @@
+package com.wipro.dto;
+
+public class ResponseTemplateVO {
+
+}

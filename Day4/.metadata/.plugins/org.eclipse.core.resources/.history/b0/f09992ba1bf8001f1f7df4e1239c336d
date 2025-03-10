@@ -1,0 +1,13 @@
+package com.wipro.KaflaPrac;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class KafkaConsumerPracApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(KafkaConsumerPracApplication.class, args);
+	}
+
+}

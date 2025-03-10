@@ -1,0 +1,2 @@
+spring.application.name=ProducerPrac
+server.port=8081

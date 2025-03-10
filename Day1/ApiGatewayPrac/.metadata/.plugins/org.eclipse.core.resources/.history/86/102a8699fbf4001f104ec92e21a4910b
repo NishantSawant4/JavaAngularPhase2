@@ -1,0 +1,13 @@
+package com.example.APIGateway.Config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+
+@Configuration
+public class GatewayConfig {
+ 
+	
+	public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
+		
+	}
+}

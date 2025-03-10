@@ -1,0 +1,38 @@
+package com.wipro.controller;
+
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wipro.model.Email;
+import com.wipro.repository.EmailRepository;
+
+@RestController
+@RequestMapping("/email")
+public class EmailController {
+
+    @Autowired
+    private EmailRepository emailLogRepository;
+
+    @GetMapping("/send")
+    public ResponseEntity<String> sendEmail(@RequestParam String email, @RequestParam String name) {
+        // Simulate random failure to demonstrate the circuit breaker.
+        boolean simulateFailure = new Random().nextBoolean();
+        String status;
+        if (simulateFailure) {
+            status = "FAILED";
+            // Save a failed email log.
+            emailLogRepository.save(new Email(null, email, name, status));
+            throw new RuntimeException("Simulated Email Service Failure!");
+        } else {
+            status = "SENT";
+            emailLogRepository.save(new Email(null, email, name, status));
+            return ResponseEntity.ok("Welcome email sent to " + email + " for " + name);
+        }
+    }
+}

@@ -1,0 +1,5 @@
+package com.example.Microservice2.Controller;
+
+public class Service2Controller {
+
+}

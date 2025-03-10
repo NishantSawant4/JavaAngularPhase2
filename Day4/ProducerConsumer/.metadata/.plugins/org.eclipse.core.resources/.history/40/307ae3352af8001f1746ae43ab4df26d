@@ -1,0 +1,19 @@
+package com.example.controller;
+
+import com.example.service.KafkaProducerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/producer")
+public class KafkaController {
+
+    @Autowired
+    private KafkaProducerService producerService;
+
+    @PostMapping("/send")
+    public String sendMessage(@RequestParam String key, @RequestParam String value) {
+        producerService.sendMessage(key, value);
+        return "Message sent: " + key + " = " + value;
+    }
+}

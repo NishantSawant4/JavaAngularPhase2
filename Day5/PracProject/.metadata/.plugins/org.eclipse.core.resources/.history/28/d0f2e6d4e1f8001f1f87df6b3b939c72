@@ -1,0 +1,27 @@
+package com.wipro.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
+@Service
+public class EmailClientService {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @CircuitBreaker(name = "emailService", fallbackMethod = "emailFallback")
+    public String sendWelcomeEmail(String email, String name) {
+        // Direct URL to Email Service (without load balancing)
+        String url = "http://localhost:8082/email/send?email=" + email + "&name=" + name;
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+        return response.getBody();
+    }
+
+    public String emailFallback(String email, String name, Throwable throwable) {
+        return "Fallback: Email service is unavailable. Please try later.";
+    }
+}

@@ -1,0 +1,47 @@
+package com.microservice1.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.microservice1.model.Movie;
+import com.microservice1.movierepo.MovieRepo;
+
+import jakarta.transaction.Transactional;
+
+@Service
+@Transactional
+public class MovieService {
+
+	@Autowired
+	private MovieRepo movie;
+	
+	public Movie createMovie(Movie m) {
+		if(m == null) {
+			throw new RuntimeException("Invalid movie");
+		}
+		return movie.save(m);
+		
+	}
+	public Movie readMovie(long id) {
+		return movie.findById(id).orElseThrow(()-> new RuntimeException("Movie Not Found"));
+		 
+	}
+	
+	public void updateMovie(Movie m) {
+		if(m == null || m.getId()==null) {
+			throw new RuntimeException("Invalid movie");
+		}
+		movie.existsById(m.getId()){
+			movie.save(m);
+		}else {
+			new RuntimeException("Movie Not Found");
+		}
+	}
+	public void deleteMovie(long id) {
+		if(movie.existsById(id)) {
+			movie.deleteById(id);
+		}else {
+			throw new RuntimeException("Movie Not Found");
+		}
+	}
+}
